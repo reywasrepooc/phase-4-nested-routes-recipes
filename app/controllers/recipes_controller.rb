@@ -1,8 +1,7 @@
 class RecipesController < ApplicationController
 
   def show
-    recipe = Recipe.find_by(id: params[:id])
+    recipe = Recipe.find(params[:id])
     render json: recipe, include: :ingredients
   end
-
 end
